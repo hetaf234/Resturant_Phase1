@@ -26,5 +26,4 @@ public abstract double calculateTotal();
 	
 	
 	
-	
 }//class OrderItem
