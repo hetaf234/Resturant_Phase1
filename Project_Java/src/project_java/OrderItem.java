@@ -14,8 +14,6 @@ public OrderItem(String itemName, double price, int quantity) {
 public abstract double calculateTotal();
 	
 	
-	
-	
 
 	
 	
