@@ -12,11 +12,7 @@ public OrderItem(String itemName, double price, int quantity) {
 	this.quantity = quantity;
 }//end of OrderItem Constructor 
 public abstract double calculateTotal();
-	
-	
 
-	
-	
 	
 	
 }//class OrderItem
