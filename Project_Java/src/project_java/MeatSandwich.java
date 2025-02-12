@@ -13,7 +13,27 @@ public MeatSandwich(String itemName, double price, int quantity, int numOfSlices
 @Override
 public double calculateTotal() {
 	return ( (price* quantity )+(numOfSlices *5));	
-}
+}//calculateTotal()
+
+
+
+@Override
+public String toString() {
+	return "MeatSandwich [numOfSlices=" + numOfSlices + "/n itemName=" + itemName + "/n price=" + price + "/n quantity="
+			+ quantity + "/n total price of meat sandwiches =" + calculateTotal() + "]";
+}//to string 
+
+
+
+public int getNumOfSlices() {
+	return numOfSlices;
+}//getNumOfSlices()
+
+
+
+public void setNumOfSlices(int numOfSlices) {
+	this.numOfSlices = numOfSlices;
+}//setNumOfSlices(int numOfSlices)
  
 
 

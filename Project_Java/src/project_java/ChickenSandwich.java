@@ -11,7 +11,21 @@ public class ChickenSandwich extends Sandwich {
 	@Override
 	public double calculateTotal() {
 		return ( (price* quantity )+(numOfSlices *3));
-	}
+	}// calculateTotal()
+
+	@Override
+	public String toString() {
+		return "ChickenSandwich [numOfSlices=" + numOfSlices + "/n itemName=" + itemName + "/n price=" + price
+				+ "/n quantity=" + quantity + "/n total price of chicken sandwiches =" + calculateTotal() + "]";
+	}//to string 
+
+	public int getNumOfSlices() {
+		return numOfSlices;
+	}//getNumOfSlices()
+
+	public void setNumOfSlices(int numOfSlices) {
+		this.numOfSlices = numOfSlices;
+	}//setNumOfSlices(int numOfSlices)
 	
 	
 	

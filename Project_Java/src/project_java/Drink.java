@@ -26,6 +26,20 @@ public double calculateTotal() {
 	return p*quantity ;
 }//end of calculateTotal()
 
+@Override
+public String toString() {
+	return "Drink [drinkSize=" + drinkSize + ", total price of the drinks =" + calculateTotal() + "]";
+}//to string 
+
+public char getDrinkSize() {
+	return drinkSize;
+}//getDrinkSize()
+
+public void setDrinkSize(char drinkSize) {
+	this.drinkSize = drinkSize;
+}//setDrinkSize(char drinkSize)
+
+
 
 	
 	

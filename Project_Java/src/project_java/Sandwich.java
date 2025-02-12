@@ -11,6 +11,13 @@ public Sandwich(String itemName, double price, int quantity) {
 
 public abstract  double calculateTotal();
 
+
+@Override
+public String toString() {
+	return "Sandwich [itemName=" + itemName + ", price=" + price + ", quantity=" + quantity + ", total price of sandwiches="
+			+ calculateTotal() + "]";
+}//to string 
+
     
 	
 	
