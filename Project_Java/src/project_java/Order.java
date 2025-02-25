@@ -6,11 +6,10 @@ private int orderID;
 
 private int numOfOrderItem;
 private OrderItem OrderItemList[];
-public Order(int orderID, int size) {
+public Order(int orderID) {
 	this.orderID = orderID;
-
 	numOfOrderItem = 0;
-	OrderItemList=new OrderItem [size];
+	OrderItemList=new OrderItem [10];
 }//end of Order constructor 
 
 public boolean addOrderItem(OrderItem item) {
