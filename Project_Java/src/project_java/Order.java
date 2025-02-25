@@ -1,56 +1,77 @@
 package project_java;
 
 
-public class Order {
+public  class Order {
 private int orderID;
 
 private int numOfOrderItem;
 private OrderItem OrderItemList[];
-public Order(int orderID) {
+
+public Order(int orderID, int size) {
 	this.orderID = orderID;
 	numOfOrderItem = 0;
-	OrderItemList=new OrderItem [10];
+	OrderItemList=new OrderItem [size];
 }//end of Order constructor 
 
-public boolean addOrderItem(OrderItem item) {
+ public  boolean addOrderItem(OrderItem item) {
 	if (numOfOrderItem>= OrderItemList.length)
 		return false;
 	OrderItemList[numOfOrderItem++]=item;
 	return true;
 }//addOrderItem(OrderItem item)
 
-public boolean removeOrderItem (String itemName) {
-  for( int i= 0 ; i <numOfOrderItem ;i++) {
-	 if (OrderItemList[i].getItemName().equalsIgnoreCase(itemName)) {
-		 for (int j = i; j < numOfOrderItem - 1; j++) {
-			 OrderItemList[j] = OrderItemList[j + 1]; // Shift items left
-         }//end of inner for loop
-		 
-		 OrderItemList[numOfOrderItem - 1] = null; // Clear last item
-		 numOfOrderItem--; // Reduce count
-		 
-		 
-		 System.out.println("The"+itemName+"has been removed successfully! ");
-         return true; //  Successfully removed
-     }//end of if statement
- }//end of outer for loop  
-  System.out.println("Sorry ! we could not find "+ itemName);
- return false; // Item not found
+/*public boolean removeOrderItem (int itemId) {
+	if (this.orderID != itemId) {
+		System.out.println("Sorry! Could not find item with ID \" + itemId + \" in the order.");
+	return false;// Item not found
+}
+	for (int i = 0; i < numOfOrderItem; i++) {
+        if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemId) {
+            // Shift elements to the left
+            for (int j = i; j < numOfOrderItem - 1; j++) {
+                OrderItemList[j] = OrderItemList[j + 1];
+            }
+            OrderItemList[numOfOrderItem - 1] = null; // Clear last slot
+            numOfOrderItem--; // Reduce count
+            System.out.println("✅ The item with ID " + itemId + " has been removed from the order.");
+            return true; // Item removed successfully
+        }
+    }
+ 
 
 	 } //removeOrderItem (String itemName)
+	*/
+ public boolean removeOrderItem(int orderID, int itemID) { 
+	 if (this.orderID != orderID) {
+	 
+		 System.out.println("Order ID not found.");
+	 return false; } // Loop through the order items using a simple loop 
+	 for (int i = 0; i < OrderItemList.length; i++) {
+		 
+		 if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemID) {       OrderItemList[i] = null; 
+		 numOfOrderItem--;
+		 
+		 System.out.println("Item with ID " + itemID + " has been removed from Order ID: " + orderID); 
+		 return true; 
+		 
+		 } 
+		 }
+	 System.out.println("Item with ID " + itemID + " not found in the order."); 
+		 return false; 
+		 }  
 		 
 	  
-public boolean searchOrderItem( String itemName ) {
+public boolean searchOrderItem( int itemId ) {
 	
 	  for( int i= 0 ; i <numOfOrderItem ;i++) {
-		 if (OrderItemList[i].getItemName().equalsIgnoreCase(itemName)) {
-	System.out.println("Great choice! /n your "+ itemName +"is available.");
+		 if (OrderItemList[i].getItemId()==itemId) {
+	System.out.println("Great choice! \n your "+ itemId +" is available.");
 	return true;
 		 }//end of if statement 		 
 		
 	  }//end of the for loop 
 	
-	  System.out.println("Sorry! /n your "+ itemName +"is not available.");
+	  System.out.println("Sorry! \n your "+ itemId +" is not available.");
 	  return false ;
 
 	  
@@ -81,8 +102,24 @@ public void setNumOfOrderItem(int numOfOrderItem) {
 	this.numOfOrderItem = numOfOrderItem;
 }//setNumOfOrderItem(int numOfOrderItem)
 
-
-
+public void menu() {
+	System.out.println(" MENU ");
+	System.out.println("=======================================");
+	System.out.println(" SANDWICHES:");
+	System.out.println(" 1. Chicken Sandwich | 16.00 SAR");
+	System.out.println(" 2. Meat Sandwich | 18.00 SAR");
+	System.out.println(" * Extra meat Slice | +5.00 SAR ");
+	System.out.println(" * Extra chicken Slice | +3.00 SAR ");
+	System.out.println("---------------------------------------");
+	System.out.println(" BEVERAGES:");
+	System.out.println(" 3. Small Drink | 2.00 SAR");
+	System.out.println(" 4. Medium Drink | 3.00 SAR");
+	System.out.println(" 5. Large Drink | 4.00 SAR");
+	System.out.println("=======================================");
+}//menu 
+public int getOrderItemList () {
+	return OrderItemList.length ;
+}
 
 /*public OrderItem[] getOrderItemList() {
 	return OrderItemList;

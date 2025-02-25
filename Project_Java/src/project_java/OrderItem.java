@@ -1,41 +1,32 @@
 package project_java;
 
 public abstract class OrderItem {
-protected  String itemName;//the name of the item
-protected double price ;//the price 	
-protected int quantity;// the quantity 
+protected  int itemId;//the name of the item
+//protected double price ;//the price 	
+//protected int quantity;// the quantity 
 //attributes are done 
-public OrderItem(String itemName, double price, int quantity) {
 
-	this.itemName = itemName;
-	this.price = price;
-	this.quantity = quantity;
-}//end of OrderItem Constructor 
+
 public abstract double calculateTotal();
 
 
 
+public OrderItem() {
+	super();
+}
+
+
+
 public String toString() {
-	return "OrderItem [itemName=" + itemName + ", price=" + price + ", quantity=" + quantity + "]";
+	return "OrderItem itemName=" + itemId ;
 }//to string
-public String getItemName() {
-	return itemName;
+public int getItemId() {
+	return itemId;
+	
 }//getItemName
-public void setItemName(String itemName) {
-	this.itemName = itemName;
+public void setItemName(int  itemId) {
+	this.itemId = itemId;
 }//setItemName
-public double getPrice() {
-	return price;
-}//getPrice()
-public void setPrice(double price) {
-	this.price = price;
-}//setPrice(double price)
-public int getQuantity() {
-	return quantity;
-}//getQuantity()
-public void setQuantity(int quantity) {
-	this.quantity = quantity;
-}//setQuantity(int quantity)
 
 
 

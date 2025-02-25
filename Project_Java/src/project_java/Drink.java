@@ -2,9 +2,9 @@ package project_java;
 
 public  class Drink extends OrderItem {
 private char drinkSize;
-
-public Drink(String itemName, double price, int quantity, char drinkSize) {
-	super(itemName, price, quantity);
+public int itemId;
+public Drink(char drinkSize) {
+	itemId=33;
 	this.drinkSize = drinkSize;
 }//end of Drink constructor 
 
@@ -23,7 +23,7 @@ public double calculateTotal() {
 	
 	
 	
-	return p*quantity ;
+	return p;
 }//end of calculateTotal()
 
 @Override
@@ -38,6 +38,14 @@ public char getDrinkSize() {
 public void setDrinkSize(char drinkSize) {
 	this.drinkSize = drinkSize;
 }//setDrinkSize(char drinkSize)
+
+public int getItemId() {
+	return itemId;
+}
+
+public void setItemId(int itemId) {
+	this.itemId = itemId;
+}
 
 
 
