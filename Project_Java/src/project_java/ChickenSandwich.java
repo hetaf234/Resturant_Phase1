@@ -22,8 +22,8 @@ public class ChickenSandwich extends Sandwich {
 
 	@Override
 	public String toString() {
-		return "ChickenSandwich [numOfSlices=" + numOfSlices + "/n itemName=" + itemId + "/n price=" 
-				+ "/n quantity=" +  "/n total price of chicken sandwiches =" + calculateTotal() + "]";
+		return "ChickenSandwich \n number of Slices= " + numOfSlices + "\n item id =" + itemId +
+				"\n total price of chicken sandwiches =" + calculateTotal() + "SAR";
 	}//to string 
 
 	public int getNumOfSlices() {

@@ -18,7 +18,7 @@ public OrderItem() {
 
 
 public String toString() {
-	return "OrderItem itemName=" + itemId ;
+	return "itemName=" + itemId ;
 }//to string
 public int getItemId() {
 	return itemId;
@@ -27,6 +27,8 @@ public int getItemId() {
 public void setItemName(int  itemId) {
 	this.itemId = itemId;
 }//setItemName
+
+
 
 
 

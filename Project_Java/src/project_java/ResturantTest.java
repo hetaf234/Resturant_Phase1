@@ -5,110 +5,100 @@ public class ResturantTest {
 	  public static void main(String[] args) {
 		  
 	Resturant res= new Resturant();
-	Order ord1=new Order (1111, 1);
-	Order ord2=new Order (2222, 2);
-	Order ord3=new Order (3333, 3);
-	Order ord4=new Order (4444, 4);
-	OrderItem chicken= new ChickenSandwich();
+	
+	
+	Order order1= new Order(1111,1);
+	Order order2= new Order(2222,2);
+	Order order3= new Order(3333,3);
+	Order order4= new Order(4444,4);
+	
+	
+	
+	
 	System.out.println("----------------WELCOME TO OUR RESTURANT --------------");
 	int choice =0;
 	int id;
-		do { 
-		
+	
+	do { 
 			System.out.println("Choose one of the choices: ");
 			System.out.println("1.Create a new order. ");
 			System.out.println("2.Remove an item in the order.");
-			System.out.println("3.Search for an order ");
-			System.out.println("4.Cancel an order.");
-			System.out.println("5.Exit");
+			System.out.println("3.Cancel an order.");
+			System.out.println("4.Search for an order ");
+			System.out.println("5.display orders ");
+			System.out.println("6.Exit ");
 			choice = read.nextInt();
-			//System.out.println("Enter the order ID");
-			/*int id=read.nextInt();
-			if (  res.searchOrder(id) ) 
-				System.out.println("The id is not valid , please try again.");
-				*/
-			switch(choice) {
 			
+			
+			switch(choice) {
 			case 1: 
+				/* System.out.println("Enter the order ID");
+				 id=read.nextInt();
 				
-				/*
-				 System.out.println("Enter the order ID");
-				
-				int id=read.nextInt();
-				
-				if (  res.searchOrder(id) ) 
+				if (res.searchOrder(id) ) 
 					System.out.println("The id is not valid , please try again.");
 			
 				else 
-				{
-				 */
-					//System.out.println("How many items would you like to add to your order?");
-					//int numofItems=read.nextInt();
-					System.out.println("What would you like to order? ");
-					ord1.menu();
+				{*/
+				
+					System.out.println("How many items would you like to add to your order? 1 to 4 items only ");
+					int numofItems=read.nextInt();
+				    
+					switch (numofItems) {
+					case 1: 
+						System.out.println("What would you like to order? ");
+						Order.menu();
+						order1.creatingOrder(1);
+						System.out.println("Total is = "+ order1.getTotalPrice()+ "SAR");
+						res.addOrder(order1);
+						
+						break;
+					case 2: 
+						System.out.println("What would you like to order? ");
+						Order.menu();
+						order2.creatingOrder(2);
+						System.out.println("Total is = "+ order2.getTotalPrice()+ "SAR");
+						res.addOrder(order2);
+						break;
+					case 3: 
+						System.out.println("What would you like to order? ");
+						Order.menu();
+						order3.creatingOrder(3);
+						System.out.println("Total is = "+ order3.getTotalPrice()+ "SAR");
+						res.addOrder(order3);
+						break;
+					case 4: 
+						System.out.println("What would you like to order? ");
+						Order.menu();
+						order4.creatingOrder(4);
+						System.out.println("Total is = "+ order4.getTotalPrice()+ "SAR");
+						res.addOrder(order4);
+						break;
+						default : System.out.println("sorry try again ");
+							
+					}//switch (numofItems)
 					
-					for (int i=0; i<ord1.getOrderItemList(); i++) {
-						System.out.println("Select an order item from 1 to 5 ");
-					int choice2=read.nextInt();
-					switch (choice2) {
-	
-					case 1: //chicken sandwich 
-						System.out.println("How many slices would you like ? 3 SAR extra, enter 0 for none ");
-						int slice= read.nextInt();
-						((ChickenSandwich)(chicken)). setNumOfSlices (slice);
-						if (ord1.addOrderItem(chicken)) 
-							System.out.println("**Chicken sandwich is successfully added to the order**");
-						else  
-							System.out.println("failed to add ");
-						break;
-						
-					case 2: //Meat sandwich 
-						System.out.println("How many slices would you like ? 5 SAR extra, enter 0 for none ");
-						 slice= read.nextInt();
-						OrderItem item2 = new MeatSandwich (slice );
-						if (ord1.addOrderItem(item2)) 
-							System.out.println("**Meat sandwich is successfully added to the order**");
-						else  
-							System.out.println("failed to add ");
-						break;
-						
-					case 3: // Small drink 
-						OrderItem item3 = new Drink ('s');
-						if (ord1.addOrderItem(item3)) 
-							System.out.println("**Drink is successfully added to the order**");
-						else  
-							System.out.println("failed to add ");
-						break;
-					case 4: //meduim drink 
-						OrderItem item4 = new Drink ('m');
-						if (ord1.addOrderItem(item4)) 
-							System.out.println("**Drink is successfully added to the order**");
-						else  
-							System.out.println("failed to add ");
-						break;
-						
-					case 5: //large drink 
-						OrderItem item5 = new Drink ('l');
-						if (ord1.addOrderItem(item5)) 
-							System.out.println("**Drink is successfully added to the order**");
-						else  
-							System.out.println("failed to add ");
-						break;
-						
-						default: System.out.println("try again, invalid selection ");
-						          i--;
-						          break; 
-					}//switch
 					
-					}//for loop 
+				
+					
+					//here 
 			//{ else 
-			res.addOrder(ord1);
+			
 				 break;
 				 
 			case 2:   //Remove an item in the order.
-				System.out.print("Enter the order ID: ");
+				System.out.print("Enter the order ID:  ");
+				System.out.println(" 1 item order id = 1111");
+				System.out.println(" 2 item order id = 2222");
+				System.out.println(" 3 item order id = 3333");
+				System.out.println(" 4 item order id = 4444");
 				  int removeOrderID = read.nextInt();
-					System.out.print("Enter the item IDbto remove: ");
+					System.out.print("Enter the item ID to remove: ");
+					System.out.println("11 chicken sandwich ");
+					System.out.println("22 meat sandwich ");
+					System.out.println("33 small drink  ");
+					System.out.println("44 meduim drink  ");
+					System.out.println("55 large drink  ");
 					  int removeItemID = read.nextInt();
                          res.removeOrderItem(removeOrderID, removeItemID);
 
@@ -134,9 +124,13 @@ public class ResturantTest {
 			    //else 
 				
 				 break;
-			case 3: 
-				   System.out.print("Enter Order id you want to remove: ");
-			        
+			case 3: //remove order 
+				   System.out.print("Enter order id you want to remove: ");
+				   System.out.print("Enter the order ID:  ");
+					System.out.println(" 1 item order id = 1111");
+					System.out.println(" 2 item order id = 2222");
+					System.out.println(" 3 item order id = 3333");
+					System.out.println(" 4 item order id = 4444");
 			        int removeEntireOrderID= read.nextInt();
 			        res.removeOrder(removeEntireOrderID);
 			        
@@ -144,26 +138,27 @@ public class ResturantTest {
 				 
 				 
 				 
-			case 4://cancel an order
-				System.out.println(" please enter an order ID to cancel ");
-				 id = read.nextInt();
-				 res.removeOrder(id);
-			
-				 break;
-			case 5: 
-				 System.out.println(res.toString()); 
-				 System.out.println("---------");
-				 System.out.println(ord1.toString());
-				 break;
-			case 6:
+			case 4:
 				System.out.println("enter an item ID to look for ");
+				System.out.println(" 1 item order id = 1111");
+				System.out.println(" 2 item order id = 2222");
+				System.out.println(" 3 item order id = 3333");
+				System.out.println(" 4 item order id = 4444");
 				 id=read.nextInt();
-				if (ord1.searchOrderItem(id))
+				if (Order.searchOrderItem(id))
 					System.out.println("found ");
 				else 
 					System.out.println("sorry ");
 				 break;
-			case 7:
+			
+				
+			case 5: 
+				 System.out.println(res.toString()); 
+				 System.out.println("---------");
+		
+				 break;
+			
+			case 6:
 
 				System.exit(0);
 			}// switch
@@ -172,7 +167,7 @@ public class ResturantTest {
 			
 			
 			
-		}while (choice!=10);
+		}while (choice!=6);
 		
 		
 		

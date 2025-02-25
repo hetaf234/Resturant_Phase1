@@ -1,12 +1,12 @@
 package project_java;
 
-
+import java.util.*;
 public  class Order {
 private int orderID;
 
 private int numOfOrderItem;
-private OrderItem OrderItemList[];
-
+private   static OrderItem OrderItemList[];
+Scanner read= new Scanner (System.in);
 public Order(int orderID, int size) {
 	this.orderID = orderID;
 	numOfOrderItem = 0;
@@ -61,17 +61,17 @@ public Order(int orderID, int size) {
 		 }  
 		 
 	  
-public boolean searchOrderItem( int itemId ) {
+public static  boolean searchOrderItem( int itemId ) {
 	
-	  for( int i= 0 ; i <numOfOrderItem ;i++) {
-		 if (OrderItemList[i].getItemId()==itemId) {
-	System.out.println("Great choice! \n your "+ itemId +" is available.");
+	  for( int i= 0 ; i <OrderItemList.length ;i++) {
+		 if (OrderItemList[i]!=null &&OrderItemList[i].getItemId()==itemId) {
+	System.out.println("The item has been ordered before ");
 	return true;
 		 }//end of if statement 		 
 		
 	  }//end of the for loop 
 	
-	  System.out.println("Sorry! \n your "+ itemId +" is not available.");
+	  System.out.println("The item has not been ordered before ");
 	  return false ;
 
 	  
@@ -79,9 +79,9 @@ public boolean searchOrderItem( int itemId ) {
 
 
 public String toString() {
-	String str="Order [orderID=" + orderID + ", numOfOrderItem=" + numOfOrderItem + "]";
+	String str=" orderID=" + orderID + "\n  numOfOrderItem= " + numOfOrderItem ;
 	for(int i =0 ; i <numOfOrderItem;i++) {
-	str+= "/n " +OrderItemList[i].toString();
+	str+= "\n " +OrderItemList[i].toString();
 	}//end for loop 
 	return str;	
 }//to string 
@@ -98,11 +98,8 @@ public int getNumOfOrderItem() {
 	return numOfOrderItem;
 }//getNumOfOrderItem()
 
-public void setNumOfOrderItem(int numOfOrderItem) {
-	this.numOfOrderItem = numOfOrderItem;
-}//setNumOfOrderItem(int numOfOrderItem)
 
-public void menu() {
+public static void menu() {
 	System.out.println(" MENU ");
 	System.out.println("=======================================");
 	System.out.println(" SANDWICHES:");
@@ -120,6 +117,89 @@ public void menu() {
 public int getOrderItemList () {
 	return OrderItemList.length ;
 }
+
+public void creatingOrder(int numOfOrderItem ) {
+	for (int i=0; i<numOfOrderItem; i++) {
+		System.out.println("Select an order item from 1 to 5 ");
+	int choice2=read.nextInt();
+	switch (choice2) {
+
+	case 1: //chicken sandwich 
+		System.out.println("How many slices would you like ? 3 SAR extra, enter 0 for none ");
+		int slice= read.nextInt();
+		OrderItem item1 = new ChickenSandwich (slice );
+		if (addOrderItem(item1)) 
+			System.out.println("**Chicken sandwich is successfully added to the order**");
+		else  
+			System.out.println("failed to add ");
+		break;
+		
+	case 2: //Meat sandwich 
+		System.out.println("How many slices would you like ? 5 SAR extra, enter 0 for none ");
+		 slice= read.nextInt();
+		OrderItem item2 = new MeatSandwich (slice );
+		if (addOrderItem(item2)) 
+			System.out.println("**Meat sandwich is successfully added to the order**");
+		else  
+			System.out.println("failed to add ");
+		break;
+		
+	case 3: // Small drink 
+		OrderItem item3 = new Drink ('s');
+		if (addOrderItem(item3)) 
+			System.out.println("**Drink is successfully added to the order**");
+		else  
+			System.out.println("failed to add ");
+		break;
+	case 4: //meduim drink 
+		OrderItem item4 = new Drink ('m');
+		if (addOrderItem(item4)) 
+			System.out.println("**Drink is successfully added to the order**");
+		else  
+			System.out.println("failed to add ");
+		break;
+		
+	case 5: //large drink 
+		OrderItem item5 = new Drink ('l');
+		if (addOrderItem(item5)) 
+			System.out.println("**Drink is successfully added to the order**");
+		else  
+			System.out.println("failed to add ");
+		break;
+		
+		default: System.out.println("try again, invalid selection ");
+		          i--;
+		          break; 
+	}//switch
+	
+	}//for loop 
+}
+
+
+
+
+
+public double getTotalPrice() {
+	double total=0.0;
+	for (int i=0 ; i<numOfOrderItem ; i++) {
+		total+=OrderItemList[i].calculateTotal();
+	}//for 
+	return total ;
+}//public double getTotalPrice()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*public OrderItem[] getOrderItemList() {
 	return OrderItemList;

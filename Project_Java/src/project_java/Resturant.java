@@ -15,10 +15,11 @@ public boolean addOrder(Order order) {
         orderList[numOfOrders] = order;
         numOfOrders++;
         isValidOrderID(order.getOrderID());
-        System.out.println("order is added ");
+        System.out.println("order is added ** ");
         return true;} 
     
     else 
+    	  System.out.println("order is NOT added ** ");
     	return false ; 
     }// end of addOrder 
 
@@ -74,7 +75,6 @@ public String toString() {
 	return str;
 	
 }// toString 
-
 
 
 

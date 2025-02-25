@@ -19,8 +19,8 @@ public double calculateTotal() {
 
 @Override
 public String toString() {
-	return "MeatSandwich [numOfSlices=" + numOfSlices + "/n itemName=" + itemId + "/n price="  + "/n quantity="
-			 + "/n total price of meat sandwiches =" + calculateTotal() + "]";
+	return "MeatSandwich \n number Of Slices= " + numOfSlices + "\n item id =" + itemId +
+			  "\n total price of meat sandwiches =" + calculateTotal() + "SAR ";
 }//to string 
 
 

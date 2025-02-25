@@ -12,23 +12,21 @@ public double calculateTotal() {
 	
 	double p=0;
 	if (drinkSize=='S' || drinkSize =='s') {
-		p=5;
+		p=2;
 	}
 	else if (drinkSize=='M' || drinkSize =='m') {
-		p=10;
+		p=3;
 	}
 	else if (drinkSize=='L' || drinkSize =='l') {
-	p=15;
+	p=5;
 	}
-	
-	
-	
 	return p;
+	
 }//end of calculateTotal()
 
 @Override
 public String toString() {
-	return "Drink [drinkSize=" + drinkSize + ", total price of the drinks =" + calculateTotal() + "]";
+	return " Drink \n drink Size=" + drinkSize + "\n total price of the drinks =" + calculateTotal() + "SAR";
 }//to string 
 
 public char getDrinkSize() {
