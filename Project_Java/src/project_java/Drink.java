@@ -4,7 +4,16 @@ public  class Drink extends OrderItem {
 private char drinkSize;
 public int itemId;
 public Drink(char drinkSize) {
-	itemId=33;
+	if (drinkSize=='S' || drinkSize =='s') 
+		itemId=33;
+	
+	else if (drinkSize=='M' || drinkSize =='m') 
+		itemId=44;
+	
+	else if (drinkSize=='L' || drinkSize =='l') 
+		itemId=55;
+	
+	
 	this.drinkSize = drinkSize;
 }//end of Drink constructor 
 
@@ -26,7 +35,7 @@ public double calculateTotal() {
 
 @Override
 public String toString() {
-	return " Drink \n drink Size=" + drinkSize + "\n total price of the drinks =" + calculateTotal() + "SAR";
+	return " Drink \n drink Size=" + drinkSize +"\n item id=  "+ itemId + "\n total price of the drinks =" + calculateTotal() + "SAR";
 }//to string 
 
 public char getDrinkSize() {
