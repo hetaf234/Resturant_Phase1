@@ -12,7 +12,7 @@ public Resturant() {
 
 public boolean addOrder(Order order) {
     if (numOfOrders < orderList.length) { // Check if there's space
-        orderList[numOfOrders] = order;
+        orderList[numOfOrders] = new Order(order);
         numOfOrders++;
         checkId(order.getOrderID());
         

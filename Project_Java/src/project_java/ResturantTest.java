@@ -139,18 +139,58 @@ public class ResturantTest {
 				 
 				 
 			case 4:
-				System.out.println("enter an item ID to look for ");
+				System.out.println("enter the order id : ");
 				System.out.println(" 1 item order id = 1111");
 				System.out.println(" 2 item order id = 2222");
 				System.out.println(" 3 item order id = 3333");
 				System.out.println(" 4 item order id = 4444");
 				 id=read.nextInt();
-				if (Order.searchOrderItem(id))
+				 System.out.println("Enter the item ID to look for : ");
+					System.out.println("11 chicken sandwich ");
+					System.out.println("22 meat sandwich ");
+					System.out.println("33 small drink  ");
+					System.out.println("44 meduim drink  ");
+					System.out.println("55 large drink  ");
+				 int item=read.nextInt();
+				 
+				 switch(id) {
+				 case 1111:
+					 if (order1.searchOrderItem(item))
+						System.out.println("found ");
+					else 
+						System.out.println("sorry ");
+					 break;
+				 case 2222:
+					 if (order2.searchOrderItem(item))
+						System.out.println("found ");
+					else 
+						System.out.println("sorry ");
+					 break;
+				 case 3333: 
+					 if (order3.searchOrderItem(item))
+						System.out.println("found ");
+					else 
+						System.out.println("sorry ");
+					 break;
+				 case 4444: 
+					 if (order4.searchOrderItem(item))
+							System.out.println("found ");
+						else 
+							System.out.println("sorry ");
+						 break;
+						 default :
+							 System.out.println("invalid order id ");
+				 }//switch
+				 
+				/*if (Order.searchOrderItem(id))
 					System.out.println("found ");
 				else 
 					System.out.println("sorry ");
-				 break;
+				 break;*/
 			
+				 
+				 
+				 
 				
 			case 5: 
 				 System.out.println(res.toString()); 

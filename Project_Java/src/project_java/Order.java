@@ -5,7 +5,8 @@ public  class Order {
 private int orderID;
 
 private int numOfOrderItem;
-private   static OrderItem OrderItemList[];
+private OrderItem OrderItemList[];
+
 Scanner read= new Scanner (System.in);
 public Order(int orderID, int size) {
 	this.orderID = orderID;
@@ -13,10 +14,29 @@ public Order(int orderID, int size) {
 	OrderItemList=new OrderItem [size];
 }//end of Order constructor 
 
- public  boolean addOrderItem(OrderItem item) {
+public Order(Order ord) {
+	orderID=ord.orderID;
+	OrderItemList= new OrderItem [ord.OrderItemList.length];
+	for(int i =0 ; i<ord.numOfOrderItem; i++) {
+		this.OrderItemList[i]=ord.OrderItemList[i];
+		this.numOfOrderItem++;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+public  boolean addOrderItem(OrderItem item) {
 	if (numOfOrderItem>= OrderItemList.length)
 		return false;
-	OrderItemList[numOfOrderItem++]=item;
+	OrderItemList[numOfOrderItem++]=item; //aggregation 
 	return true;
 }//addOrderItem(OrderItem item)
 
@@ -61,7 +81,7 @@ public Order(int orderID, int size) {
 		 }  
 		 
 	  
-public static  boolean searchOrderItem( int itemId ) {
+public  boolean searchOrderItem( int itemId ) {
 	
 	  for( int i= 0 ; i <OrderItemList.length ;i++) {
 		 if (OrderItemList[i]!=null &&OrderItemList[i].getItemId()==itemId) {
