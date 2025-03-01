@@ -17,11 +17,17 @@ public Order(int orderID, int size) {
 public Order(Order ord) {
 	orderID=ord.orderID;
 	OrderItemList= new OrderItem [ord.OrderItemList.length];
-	for(int i =0 ; i<ord.numOfOrderItem; i++) {
-		this.OrderItemList[i]=ord.OrderItemList[i];
-		this.numOfOrderItem++;
+	 for (int i = 0; i < ord.numOfOrderItem; i++) {
+	        if (ord.OrderItemList[i] instanceof ChickenSandwich) {
+	            this.OrderItemList[i] = new ChickenSandwich((ChickenSandwich) ord.OrderItemList[i]);
+	        } else if (ord.OrderItemList[i] instanceof MeatSandwich) {
+	            this.OrderItemList[i] = new MeatSandwich((MeatSandwich) ord.OrderItemList[i]);
+	        } else if (ord.OrderItemList[i] instanceof Drink) {
+	            this.OrderItemList[i] = new Drink((Drink) ord.OrderItemList[i]);
+	        } // Add other subclasses if necessary
+	    }
 	}
-}
+
 
 
 

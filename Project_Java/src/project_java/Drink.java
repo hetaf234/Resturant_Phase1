@@ -2,20 +2,21 @@ package project_java;
 
 public  class Drink extends OrderItem {
 private char drinkSize;
-public int itemId;
+
 public Drink(char drinkSize) {
-	if (drinkSize=='S' || drinkSize =='s') 
-		itemId=33;
-	
-	else if (drinkSize=='M' || drinkSize =='m') 
-		itemId=44;
-	
-	else if (drinkSize=='L' || drinkSize =='l') 
-		itemId=55;
+	super (getDrinkItemId(drinkSize));
 	
 	
 	this.drinkSize = drinkSize;
 }//end of Drink constructor 
+
+public Drink(Drink D) {
+   itemId=D.itemId;
+   drinkSize = D.drinkSize;
+}
+
+
+
 
 public double calculateTotal() {
 	
@@ -54,6 +55,12 @@ public void setItemId(int itemId) {
 	this.itemId = itemId;
 }
 
+public static int getDrinkItemId(char size) {
+    if (size == 'S' || size == 's') return 33;
+    if (size == 'M' || size == 'm') return 44;
+    if (size == 'L' || size == 'l') return 55;
+    return -1; // Invalid size
+}
 
 
 	

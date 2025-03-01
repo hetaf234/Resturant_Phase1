@@ -2,18 +2,37 @@ package project_java;
 
 public abstract class OrderItem {
 protected  int itemId;//the name of the item
-//protected double price ;//the price 	
-//protected int quantity;// the quantity 
-//attributes are done 
+
+
+public OrderItem() {
+	
+}
+
+
+
+public OrderItem(int id ) {
+	itemId=id;
+}
+
+
+
+
+
+
+OrderItem(OrderItem item){
+	itemId=item.itemId;
+}
+
+
+
+
+
 
 
 public abstract double calculateTotal();
 
 
 
-public OrderItem() {
-	super();
-}
 
 
 

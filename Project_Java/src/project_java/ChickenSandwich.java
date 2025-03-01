@@ -2,18 +2,24 @@ package project_java;
 
 public class ChickenSandwich extends Sandwich {
 	private int numOfSlices;
-	public int itemId;
+
 	
-	public ChickenSandwich() {
-		super();
-		numOfSlices =0;
-		itemId =11;
-	}
+	
+	
 
 	public ChickenSandwich( int numOfSlices) {
-		itemId=11;
+		super(11);
 		this.numOfSlices = numOfSlices;
 	}//end of ChickenSandwich constructor 
+	
+	public ChickenSandwich(ChickenSandwich ch) {
+		super(ch.itemId);
+		this.numOfSlices = ch.numOfSlices;
+	}
+	
+	
+	
+	
 
 	@Override
 	public double calculateTotal() {

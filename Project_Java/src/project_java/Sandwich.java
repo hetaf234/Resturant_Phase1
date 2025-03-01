@@ -1,8 +1,13 @@
 package project_java;
 
 public abstract  class Sandwich extends OrderItem {
+Sandwich(){
+	
+}
 
-
+Sandwich(int id){
+	super(id);
+}
 
 public abstract  double calculateTotal();
 

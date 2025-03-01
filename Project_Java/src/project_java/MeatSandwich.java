@@ -2,13 +2,16 @@ package project_java;
 
 public  class MeatSandwich extends Sandwich {
  private int numOfSlices;
-public int itemId;
+
 public MeatSandwich( int numOfSlices) {
-	itemId=22;
+	super(22);
 	this.numOfSlices=numOfSlices;
 }//end of MeatSandwich constuctor 
 
-
+public MeatSandwich(MeatSandwich meat) {
+	 super (meat.itemId);
+    numOfSlices = meat.numOfSlices;
+}
 
 @Override
 public double calculateTotal() {
