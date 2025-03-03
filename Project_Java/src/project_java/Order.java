@@ -24,8 +24,9 @@ public Order(Order ord) {
 	            this.OrderItemList[i] = new MeatSandwich((MeatSandwich) ord.OrderItemList[i]);
 	        } else if (ord.OrderItemList[i] instanceof Drink) {
 	            this.OrderItemList[i] = new Drink((Drink) ord.OrderItemList[i]);
-	        } // Add other subclasses if necessary
-	    }
+	        } 
+	       this.numOfOrderItem++;  
+	    }//for
 	}
 
 
@@ -107,6 +108,7 @@ public  boolean searchOrderItem( int itemId ) {
 public String toString() {
 	String str=" orderID=" + orderID + "\n  numOfOrderItem= " + numOfOrderItem ;
 	for(int i =0 ; i <numOfOrderItem;i++) {
+		  if (OrderItemList[i] != null)
 	str+= "\n " +OrderItemList[i].toString();
 	}//end for loop 
 	return str;	

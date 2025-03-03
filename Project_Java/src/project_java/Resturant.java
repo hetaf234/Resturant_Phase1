@@ -75,7 +75,7 @@ public void removeOrderItem(int orderID, int itemID)
 public String toString() {
 	String str=  " numOfOrders=" + numOfOrders + ", orderList=";
 	for (int i=0 ; i<numOfOrders ; i++)
-		str+= orderList[i].toString()+"/n ";
+		str+= orderList[i].toString()+"\n ";
 	
 	return str;
 	
