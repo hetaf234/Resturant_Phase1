@@ -25,8 +25,10 @@ public class ResturantTest {
 			System.out.println("2.Remove an item in the order.");
 			System.out.println("3.Cancel an order.");
 			System.out.println("4.Search for an order item ");
-			System.out.println("5.display orders ");
-			System.out.println("6.Exit ");
+			System.out.println("5.Search for an order ");
+	
+			System.out.println("6.display orders ");
+			System.out.println("7.Exit ");
 			choice = read.nextInt();
 			
 			
@@ -138,7 +140,7 @@ public class ResturantTest {
 				 
 				 
 				 
-			case 4:
+			case 4://search for an order item
 				System.out.println("enter the order id : ");
 				System.out.println(" 1 item order id = 1111");
 				System.out.println(" 2 item order id = 2222");
@@ -181,6 +183,7 @@ public class ResturantTest {
 						 default :
 							 System.out.println("invalid order id ");
 				 }//switch
+				 break;
 				 
 				/*if (Order.searchOrderItem(id))
 					System.out.println("found ");
@@ -188,17 +191,22 @@ public class ResturantTest {
 					System.out.println("sorry ");
 				 break;*/
 			
-				 
-				 
-				 
-				
 			case 5: 
+			System.out.println("enter the order id to look for : ");
+			System.out.println(" 1 item order id = 1111");
+			System.out.println(" 2 item order id = 2222");
+			System.out.println(" 3 item order id = 3333");
+			System.out.println(" 4 item order id = 4444");
+			 id=read.nextInt();
+				 res.searchOrder(id);
+				break;
+			case 6: 
 				 System.out.println(res.toString()); 
 				 System.out.println("---------");
 		
 				 break;
 			
-			case 6:
+			case 7:
 
 				System.exit(0);
 			}// switch

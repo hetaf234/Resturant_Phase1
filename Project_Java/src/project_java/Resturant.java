@@ -24,13 +24,7 @@ public boolean addOrder(Order order) {
     	return false ; 
     }// end of addOrder 
 
-/*public boolean isValidOrderID(int order) {
-	
-	 if ( order >= 1000 &&  order <= 9999) 
-		 return true ;
-	 else 
-		 return false ; 
-}//isValidOrderID(int orderID) */
+
 
 public boolean searchOrder(int orderID) {
 	    for (int i = 0; i < numOfOrders; i++) { // Only search within valid orders
@@ -39,9 +33,14 @@ public boolean searchOrder(int orderID) {
             return true; // Order found
         }
     }//for loop 
- 
+ System.out.println("sorry we could not find the order ");
     return false; //Order not found
 }
+
+
+
+
+
 public boolean removeOrder(int orderID) {
 	if(checkId(orderID)) {
     for (int i = 0; i < numOfOrders; i++) {
@@ -90,6 +89,9 @@ public boolean checkId(int OrderId) {
 	System.out.println("the Id is not valid ");
 	return false;
 }//checkId(int OrderId)
+
+
+
 
 
 }//class Resturant 
