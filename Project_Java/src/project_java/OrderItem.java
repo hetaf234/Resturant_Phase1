@@ -8,32 +8,16 @@ public OrderItem() {
 	
 }
 
-
-
 public OrderItem(int id ) {
 	itemId=id;
 }
-
-
-
-
-
 
 OrderItem(OrderItem item){
 	itemId=item.itemId;
 }
 
 
-
-
-
-
-
 public abstract double calculateTotal();
-
-
-
-
 
 
 public String toString() {

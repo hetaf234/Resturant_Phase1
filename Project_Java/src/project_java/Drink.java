@@ -15,9 +15,6 @@ public Drink(Drink D) {
    drinkSize = D.drinkSize;
 }
 
-
-
-
 public double calculateTotal() {
 	
 	double p=0;

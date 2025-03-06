@@ -198,7 +198,11 @@ public class ResturantTest {
 			System.out.println(" 3 item order id = 3333");
 			System.out.println(" 4 item order id = 4444");
 			 id=read.nextInt();
-				 res.searchOrder(id);
+			 if (res.searchOrder(id)) {
+				    System.out.println("Order with ID " + id + " exists.");
+				} else {
+				    System.out.println("Order with ID " + id + " not found.");
+				}
 				break;
 			case 6: 
 				 System.out.println(res.toString()); 
@@ -207,7 +211,7 @@ public class ResturantTest {
 				 break;
 			
 			case 7:
-
+				System.out.println("Exiting system... Thank you for using our restaurant management system.");
 				System.exit(0);
 			}// switch
 			
@@ -215,7 +219,7 @@ public class ResturantTest {
 			
 			
 			
-		}while (choice!=6);
+		}while (choice!=7);
 		
 		
 		

@@ -18,10 +18,5 @@ public String toString() {
 			+ calculateTotal() ;
 }//to string 
 
-    
-	
-	
-	
-	
-	
+  
 }//class sandwich

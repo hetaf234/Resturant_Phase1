@@ -8,6 +8,8 @@ private int numOfOrderItem;
 private OrderItem OrderItemList[];
 
 Scanner read= new Scanner (System.in);
+
+
 public Order(int orderID, int size) {
 	this.orderID = orderID;
 	numOfOrderItem = 0;
@@ -28,16 +30,6 @@ public Order(Order ord) {
 	       this.numOfOrderItem++;  
 	    }//for
 	}
-
-
-
-
-
-
-
-
-
-
 
 
 public  boolean addOrderItem(OrderItem item) {
@@ -68,6 +60,7 @@ public  boolean addOrderItem(OrderItem item) {
 
 	 } //removeOrderItem (String itemName)
 	*/
+
  public boolean removeOrderItem(int orderID, int itemID) { 
 	 if (this.orderID != orderID) {
 	 

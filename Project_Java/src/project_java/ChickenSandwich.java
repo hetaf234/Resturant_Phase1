@@ -2,9 +2,6 @@ package project_java;
 
 public class ChickenSandwich extends Sandwich {
 	private int numOfSlices;
-
-	
-	
 	
 
 	public ChickenSandwich( int numOfSlices) {
@@ -17,10 +14,6 @@ public class ChickenSandwich extends Sandwich {
 		this.numOfSlices = ch.numOfSlices;
 	}
 	
-	
-	
-	
-
 	@Override
 	public double calculateTotal() {
 		return 16 +(numOfSlices *3);

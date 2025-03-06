@@ -1,13 +1,12 @@
 package project_java;
 
-
 public class Resturant {
 private int numOfOrders;
 Order orderList[];
+
 public Resturant() {
 	numOfOrders=0;
 	orderList=new Order[10];
-	
 }//end of the consturctor 
 
 public boolean addOrder(Order order) {
@@ -25,7 +24,6 @@ public boolean addOrder(Order order) {
     }// end of addOrder 
 
 
-
 public boolean searchOrder(int orderID) {
 	    for (int i = 0; i < numOfOrders; i++) { // Only search within valid orders
         if (orderList[i].getOrderID() == orderID) {
@@ -36,9 +34,6 @@ public boolean searchOrder(int orderID) {
  System.out.println("sorry we could not find the order ");
     return false; //Order not found
 }
-
-
-
 
 
 public boolean removeOrder(int orderID) {
