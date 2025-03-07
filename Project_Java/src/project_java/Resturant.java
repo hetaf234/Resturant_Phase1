@@ -6,7 +6,7 @@ Order orderList[];
 
 public Resturant() {
 	numOfOrders=0;
-	orderList=new Order[10];
+	orderList=new Order[100];
 }//end of the consturctor 
 
 public boolean addOrder(Order order) {
