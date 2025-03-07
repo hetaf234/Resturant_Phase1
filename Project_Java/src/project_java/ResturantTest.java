@@ -97,11 +97,12 @@ public class ResturantTest {
 				 //break;
 				 
 			case 2:   //Remove an item in the order.
-				System.out.print("Enter the order ID:  ");
+				System.out.println("Enter the order ID:  ");
 				System.out.println(" 1 item order id = 1111");
 				System.out.println(" 2 item order id = 2222");
 				System.out.println(" 3 item order id = 3333");
 				System.out.println(" 4 item order id = 4444");
+				System.out.println("-----------------------");
 				  int removeOrderID = read.nextInt();
 					System.out.println("Enter the item ID to remove: ");
 					System.out.println("11 chicken sandwich ");
@@ -109,6 +110,7 @@ public class ResturantTest {
 					System.out.println("33 small drink  ");
 					System.out.println("44 meduim drink  ");
 					System.out.println("55 large drink  ");
+					System.out.println("-----------------------------");
 					  int removeItemID = read.nextInt();
                          res.removeOrderItem(removeOrderID, removeItemID);
 

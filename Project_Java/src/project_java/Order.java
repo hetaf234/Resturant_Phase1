@@ -63,13 +63,13 @@ public  boolean addOrderItem(OrderItem item) {
 
  public boolean removeOrderItem(int orderID, int itemID) { 
 	    if (this.orderID != orderID) {
-	        System.out.println("Order ID " + orderID + " not found.");
-	        return false;
+	       // System.out.println("Order ID " + orderID + " not found.");
+	        return false; // Loop through the order items using a simple loop
 	    }
 
 	    for (int i = 0; i < numOfOrderItem; i++) {
 	        if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemID) {
-	            // Shift elements left to remove the null gap
+	            // Shift elements left 
 	            for (int j = i; j < numOfOrderItem - 1; j++) {
 	                OrderItemList[j] = OrderItemList[j + 1];
 	            }
@@ -156,6 +156,8 @@ public static void menu() {
 	System.out.println(" 4. Medium Drink | 3.00 SAR");
 	System.out.println(" 5. Large Drink | 4.00 SAR");
 	System.out.println("=======================================");
+	System.out.println(" ");
+
 }//menu 
 public int getOrderItemList () {
 	return OrderItemList.length ;

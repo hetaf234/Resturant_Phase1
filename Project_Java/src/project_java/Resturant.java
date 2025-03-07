@@ -87,7 +87,7 @@ public void removeOrderItem(int orderID, int itemID)
      if (orderList[i] != null && orderList[i].getOrderID() == orderID) {
         orderFound = true;
         
-        if (orderList[i].removeOrderItem(orderID, itemID)) { // ✅ Corrected: Now passing both parameters
+        if (orderList[i].removeOrderItem(orderID, itemID)) { 
             itemRemoved = true;
             System.out.println("Item with ID " + itemID + " removed from Order ID: " + orderID);
         }
