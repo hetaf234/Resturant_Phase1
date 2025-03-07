@@ -45,7 +45,13 @@ public class ResturantTest {
 				    System.out.println("(e.g., 1111, 2222, or any number of your choice)");
 				    int orderId = read.nextInt(); 
 				    
-					System.out.println("How many items would you like to add to your order? 1 to 4 items only ");
+				    // Validate if Order ID is unique
+				    while (res.searchOrder(orderId)) {
+				        System.out.println("Order ID already exists. Please enter a different ID:");
+				        orderId = read.nextInt();
+				    }
+				    
+					System.out.println("How many items would you like to add to your order?  ");
 					int numofItems=read.nextInt();
 				    
 					Order newOrder = new Order(orderId, numofItems);
@@ -55,8 +61,8 @@ public class ResturantTest {
 					
 					System.out.println("─────────────────────────────────────");
 				    System.out.println("Order ID " + orderId + " has been successfully created.");
-				    System.out.println("🛒 Items added: " + numofItems);
-				    System.out.println("💰 Total Price: " + newOrder.getTotalPrice() + " SAR");
+				    System.out.println("Items added: " + numofItems);
+				    System.out.println("Total Price: " + newOrder.getTotalPrice() + " SAR");
 				    System.out.println("─────────────────────────────────────");
 					
 					res.addOrder(newOrder);

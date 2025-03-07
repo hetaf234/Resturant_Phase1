@@ -10,10 +10,30 @@ public Resturant() {
 }//end of the consturctor 
 
 public boolean addOrder(Order order) {
-    if (numOfOrders < orderList.length) { // Check if there's space
+	 // Check if order with same ID exists
+    for (int i = 0; i < numOfOrders; i++) {
+        if (orderList[i] != null && orderList[i].getOrderID() == order.getOrderID()) {
+            System.out.println("Order with ID " + order.getOrderID() + " already exists. Please enter a unique ID.");
+            return false;
+        }
+    }
+
+    // Add order if there's space
+    if (numOfOrders < orderList.length) {
         orderList[numOfOrders] = new Order(order);
         numOfOrders++;
-        checkId(order.getOrderID());
+        System.out.println("Order ID " + order.getOrderID() + " has been successfully added.");
+        return true;
+    } else {
+        System.out.println("Unable to add order. The restaurant has reached its order capacity.");
+        return false;
+    }
+}
+
+  /*  if (numOfOrders < orderList.length) { // Check if there's space
+        orderList[numOfOrders] = new Order(order);
+        numOfOrders++;
+        //checkId(order.getOrderID());
         
         System.out.println("order is added ** ");
         return true;} 
@@ -21,17 +41,17 @@ public boolean addOrder(Order order) {
     else 
     	  System.out.println("order is NOT added ** ");
     	return false ; 
-    }// end of addOrder 
+    }// end of addOrder */
 
 
 public boolean searchOrder(int orderID) {
 	    for (int i = 0; i < numOfOrders; i++) { // Only search within valid orders
         if (orderList[i].getOrderID() == orderID) {
-        	System.out.println("the order is already exist . ");
+        	//System.out.println("the order is already exist . ");
             return true; // Order found
         }
     }//for loop 
- System.out.println("sorry we could not find the order ");
+ //System.out.println("sorry we could not find the order ");
     return false; //Order not found
 }
 
@@ -130,7 +150,7 @@ public String toString() {
 	
 }// toString 
 
-public boolean checkId(int OrderId) {
+/*public boolean checkId(int OrderId) {
 	if (OrderId==1111 ||OrderId==2222||OrderId==3333||OrderId==4444 ) 
 		return true ;
 		
@@ -138,7 +158,7 @@ public boolean checkId(int OrderId) {
 
 	System.out.println("the Id is not valid ");
 	return false;
-}//checkId(int OrderId)
+}//checkId(int OrderId) */
 
 
 
