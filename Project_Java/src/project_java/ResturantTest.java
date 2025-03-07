@@ -41,7 +41,8 @@ public class ResturantTest {
 			
 				else 
 				{*/
-				    System.out.println("Enter Order ID: ");
+				    System.out.println("Enter a unique Order ID: ");
+				    System.out.println("(e.g., 1111, 2222, or any number of your choice)");
 				    int orderId = read.nextInt(); 
 				    
 					System.out.println("How many items would you like to add to your order? 1 to 4 items only ");
@@ -51,7 +52,13 @@ public class ResturantTest {
 					System.out.println("What would you like to order?");
 					Order.menu();
 					newOrder.creatingOrder(numofItems);
-					System.out.println("Total is = " + newOrder.getTotalPrice() + " SAR");
+					
+					System.out.println("─────────────────────────────────────");
+				    System.out.println("Order ID " + orderId + " has been successfully created.");
+				    System.out.println("🛒 Items added: " + numofItems);
+				    System.out.println("💰 Total Price: " + newOrder.getTotalPrice() + " SAR");
+				    System.out.println("─────────────────────────────────────");
+					
 					res.addOrder(newOrder);
 					break;
 					/*switch (numofItems) {
