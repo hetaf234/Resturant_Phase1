@@ -62,23 +62,45 @@ public  boolean addOrderItem(OrderItem item) {
 	*/
 
  public boolean removeOrderItem(int orderID, int itemID) { 
-	 if (this.orderID != orderID) {
+	    if (this.orderID != orderID) {
+	        System.out.println("Order ID " + orderID + " not found.");
+	        return false;
+	    }
+
+	    for (int i = 0; i < numOfOrderItem; i++) {
+	        if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemID) {
+	            // Shift elements left to remove the null gap
+	            for (int j = i; j < numOfOrderItem - 1; j++) {
+	                OrderItemList[j] = OrderItemList[j + 1];
+	            }
+	            OrderItemList[numOfOrderItem - 1] = null; // Clear last slot
+	            numOfOrderItem--;
+
+	            System.out.println("Item with ID " + itemID + " removed from Order ID: " + orderID);
+	            return true;
+	        }
+	    }
+	    System.out.println("Item ID " + itemID + " not found in Order ID: " + orderID);
+	    return false;
+	}
+
+	 
+	 /* if (this.orderID != orderID) {
 	 
 		 System.out.println("Order ID not found.");
 	 return false; } // Loop through the order items using a simple loop 
+	 
 	 for (int i = 0; i < OrderItemList.length; i++) {
-		 
 		 if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemID) {       OrderItemList[i] = null; 
 		 numOfOrderItem--;
 		 
 		 System.out.println("Item with ID " + itemID + " has been removed from Order ID: " + orderID); 
 		 return true; 
-		 
 		 } 
 		 }
 	 System.out.println("Item with ID " + itemID + " not found in the order."); 
 		 return false; 
-		 }  
+		 }  */
 		 
 	  
 public  boolean searchOrderItem( int itemId ) {

@@ -1,7 +1,7 @@
 package project_java;
 
 public class Resturant {
-private int numOfOrders;
+public int numOfOrders;
 Order orderList[];
 
 public Resturant() {
@@ -37,7 +37,30 @@ public boolean searchOrder(int orderID) {
 
 
 public boolean removeOrder(int orderID) {
-	if(checkId(orderID)) {
+	 boolean orderFound = false;
+	    
+	    for (int i = 0; i < numOfOrders; i++) {
+	        if (orderList[i] != null && orderList[i].getOrderID() == orderID) {
+	            orderFound = true;
+	            
+	            // second loop in order to shift elements
+	            for (int j = i; j < numOfOrders - 1; j++) {
+	                orderList[j] = orderList[j + 1];
+	            }
+	            orderList[numOfOrders - 1] = null; // Clear last slot
+	            numOfOrders--; // Reduce order count
+	            
+	            System.out.println("Order ID " + orderID + " removed successfully.");
+	            return true;
+	        }
+	    }
+	    
+	    if (!orderFound) {
+	        System.out.println("Order ID not found.");
+	    }
+	    return false;
+}
+	/*if(checkId(orderID)) {
     for (int i = 0; i < numOfOrders; i++) {
         if (orderList[i].getOrderID() == orderID)// found 
         {
@@ -54,16 +77,36 @@ public boolean removeOrder(int orderID) {
 	
     System.out.println("the order is not found ");
     return false; //  Order not found
-}// end of removeOrder 
+}// end of removeOrder */
 
 public void removeOrderItem(int orderID, int itemID)
-{
-	for (int i = 0; i < numOfOrders ; i++) 
+{   boolean orderFound = false;
+    boolean itemRemoved = false;
+
+    for (int i = 0; i < numOfOrders; i++) {
+     if (orderList[i] != null && orderList[i].getOrderID() == orderID) {
+        orderFound = true;
+        
+        if (orderList[i].removeOrderItem(orderID, itemID)) { // ✅ Corrected: Now passing both parameters
+            itemRemoved = true;
+            System.out.println("Item with ID " + itemID + " removed from Order ID: " + orderID);
+        }
+        break; // Order found, no need to continue looping
+    }
+}
+
+if (!orderFound) {
+    System.out.println("Order ID not found.");
+} else if (!itemRemoved) {
+    System.out.println("Item ID " + itemID + " not found in Order ID: " + orderID);
+}
+}
+	/*for (int i = 0; i < numOfOrders ; i++) 
 	
 	if (orderList[i] != null && orderList[i].getOrderID() == orderID)
 
 		orderList[i].removeOrderItem(orderID, itemID);// Remove using itemID return; } } System.out.println("Order ID not found."); }
-}//method 
+}//method */
 
 @Override
 public String toString() {
