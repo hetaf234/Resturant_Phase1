@@ -105,11 +105,11 @@ public class ResturantTest {
 				 
 			case 2:   //Remove an item in the order.
 				System.out.println("Enter the order ID:  ");
-				System.out.println(" 1 item order id = 1111");
+				/*System.out.println(" 1 item order id = 1111");
 				System.out.println(" 2 item order id = 2222");
 				System.out.println(" 3 item order id = 3333");
 				System.out.println(" 4 item order id = 4444");
-				System.out.println("-----------------------");
+				System.out.println("-----------------------");*/
 				  int removeOrderID = read.nextInt();
 					System.out.println("Enter the item ID to remove: ");
 					System.out.println("11 chicken sandwich ");
@@ -144,12 +144,12 @@ public class ResturantTest {
 				
 				 break;
 			case 3: //remove order 
-				   System.out.println("Enter order id you want to remove: ");
-				   System.out.println("Enter the order ID:  ");
+				   System.out.println("Enter the Order ID to cancel an order: ");
+				  /* System.out.println("Enter the order ID:  ");
 					System.out.println(" 1 item order id = 1111");
 					System.out.println(" 2 item order id = 2222");
 					System.out.println(" 3 item order id = 3333");
-					System.out.println(" 4 item order id = 4444");
+					System.out.println(" 4 item order id = 4444");*/
 			        int removeEntireOrderID= read.nextInt();
 			        res.removeOrder(removeEntireOrderID);
 			        
@@ -242,10 +242,10 @@ public class ResturantTest {
 			
 			case 5: 
 			System.out.println("enter the order id to look for : ");
-			System.out.println(" 1 item order id = 1111");
+			/*System.out.println(" 1 item order id = 1111");
 			System.out.println(" 2 item order id = 2222");
 			System.out.println(" 3 item order id = 3333");
-			System.out.println(" 4 item order id = 4444");
+			System.out.println(" 4 item order id = 4444");*/
 			 id=read.nextInt();
 			 if (res.searchOrder(id)) {
 				    System.out.println("Order with ID " + id + " exists.");

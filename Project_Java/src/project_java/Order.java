@@ -143,6 +143,7 @@ public int getNumOfOrderItem() {
 
 
 public static void menu() {
+	System.out.println(" ");
 	System.out.println(" MENU ");
 	System.out.println("=======================================");
 	System.out.println(" SANDWICHES:");
@@ -174,7 +175,7 @@ public void creatingOrder(int numOfOrderItem ) {
 		int slice= read.nextInt();
 		OrderItem item1 = new ChickenSandwich (slice );
 		if (addOrderItem(item1)) 
-			System.out.println("**Chicken sandwich is successfully added to the order**");
+			System.out.println("     *****Chicken sandwich is successfully added to the order*****");
 		else  
 			System.out.println("failed to add ");
 		break;
@@ -184,7 +185,7 @@ public void creatingOrder(int numOfOrderItem ) {
 		 slice= read.nextInt();
 		OrderItem item2 = new MeatSandwich (slice );
 		if (addOrderItem(item2)) 
-			System.out.println("**Meat sandwich is successfully added to the order**");
+			System.out.println("     *****Meat sandwich is successfully added to the order*****");
 		else  
 			System.out.println("failed to add ");
 		break;
@@ -192,14 +193,14 @@ public void creatingOrder(int numOfOrderItem ) {
 	case 3: // Small drink 
 		OrderItem item3 = new Drink ('s');
 		if (addOrderItem(item3)) 
-			System.out.println("**Drink is successfully added to the order**");
+			System.out.println("     *****Drink is successfully added to the order*****");
 		else  
 			System.out.println("failed to add ");
 		break;
 	case 4: //meduim drink 
 		OrderItem item4 = new Drink ('m');
 		if (addOrderItem(item4)) 
-			System.out.println("**Drink is successfully added to the order**");
+			System.out.println("     *****Drink is successfully added to the order*****");
 		else  
 			System.out.println("failed to add ");
 		break;
@@ -207,7 +208,7 @@ public void creatingOrder(int numOfOrderItem ) {
 	case 5: //large drink 
 		OrderItem item5 = new Drink ('l');
 		if (addOrderItem(item5)) 
-			System.out.println("**Drink is successfully added to the order**");
+			System.out.println("     *****Drink is successfully added to the order*****");
 		else  
 			System.out.println("failed to add ");
 		break;
