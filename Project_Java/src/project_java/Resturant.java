@@ -110,11 +110,23 @@ if (!orderFound) {
 
 @Override
 public String toString() {
-	String str=  " numOfOrders=" + numOfOrders + ", orderList=";
+	 String str = "\n==============================\n";
+	    str += " Number of Orders: " + numOfOrders + "\n";
+	    str += "==============================\n";
+
+	    for (int i = 0; i < numOfOrders; i++) {
+	        if (orderList[i] != null) {
+	            str += orderList[i].toString();
+	        }
+	    }
+
+	    return str;
+	
+	/*String str=  " numOfOrders=" + numOfOrders + ", orderList=";
 	for (int i=0 ; i<numOfOrders ; i++)
 		str+= orderList[i].toString()+"\n ";
 	
-	return str;
+	return str;*/
 	
 }// toString 
 

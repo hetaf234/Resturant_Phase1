@@ -21,7 +21,7 @@ public abstract double calculateTotal();
 
 
 public String toString() {
-	return "itemName=" + itemId ;
+	 return " Item ID: " + itemId + "\n Price: " + calculateTotal() + " SAR";
 }//to string
 public int getItemId() {
 	return itemId;

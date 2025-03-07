@@ -121,12 +121,28 @@ public  boolean searchOrderItem( int itemId ) {
 
 
 public String toString() {
-	String str=" orderID=" + orderID + "\n  numOfOrderItem= " + numOfOrderItem ;
+	String str = "\n-------------------------------\n";
+    str += " Order ID: " + orderID + "\n";
+    str += " Number of Items: " + numOfOrderItem + "\n";
+    str += "-------------------------------\n";
+
+    for (int i = 0; i < numOfOrderItem; i++) {
+        if (OrderItemList[i] != null) {
+            str += OrderItemList[i].toString() + "\n";
+        }
+    }
+
+    str += "-------------------------------\n";
+    str += " Total Price: " + getTotalPrice() + " SAR\n";
+    str += "-------------------------------\n";
+
+    return str;
+	/*String str=" orderID=" + orderID + "\n  numOfOrderItem= " + numOfOrderItem ;
 	for(int i =0 ; i <numOfOrderItem;i++) {
 		  if (OrderItemList[i] != null)
 	str+= "\n " +OrderItemList[i].toString();
 	}//end for loop 
-	return str;	
+	return str;	*/
 }//to string 
 
 public int getOrderID() {
