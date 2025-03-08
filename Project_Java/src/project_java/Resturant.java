@@ -30,19 +30,6 @@ public boolean addOrder(Order order) {
     }
 }
 
-  /*  if (numOfOrders < orderList.length) { // Check if there's space
-        orderList[numOfOrders] = new Order(order);
-        numOfOrders++;
-        //checkId(order.getOrderID());
-        
-        System.out.println("order is added ** ");
-        return true;} 
-    
-    else 
-    	  System.out.println("order is NOT added ** ");
-    	return false ; 
-    }// end of addOrder */
-
 
 public boolean searchOrder(int orderID) {
 	    for (int i = 0; i < numOfOrders; i++) { // Only search within valid orders
@@ -80,24 +67,7 @@ public boolean removeOrder(int orderID) {
 	    }
 	    return false;
 }
-	/*if(checkId(orderID)) {
-    for (int i = 0; i < numOfOrders; i++) {
-        if (orderList[i].getOrderID() == orderID)// found 
-        {
-            for (int j = i; j < numOfOrders - 1; j++) {
-                orderList[j] = orderList[j + 1]; // Shift orders left
-            }// end of foor loop 
-            orderList[numOfOrders - 1] = null; // Clear last order
-            numOfOrders--; // Reduce order count
-            System.out.println("the order is canceled successfully");
-            return true; //  Order removed successfully
-        }// end of if statment 
-    }// end of for loop 
-	}//if(checkId(orderID))
 	
-    System.out.println("the order is not found ");
-    return false; //  Order not found
-}// end of removeOrder */
 
 public void removeOrderItem(int orderID, int itemID)
 {   boolean orderFound = false;
@@ -121,12 +91,6 @@ if (!orderFound) {
     System.out.println("Item ID " + itemID + " not found in Order ID: " + orderID);
 }
 }
-	/*for (int i = 0; i < numOfOrders ; i++) 
-	
-	if (orderList[i] != null && orderList[i].getOrderID() == orderID)
-
-		orderList[i].removeOrderItem(orderID, itemID);// Remove using itemID return; } } System.out.println("Order ID not found."); }
-}//method */
 
 @Override
 public String toString() {
@@ -142,26 +106,10 @@ public String toString() {
 
 	    return str;
 	
-	/*String str=  " numOfOrders=" + numOfOrders + ", orderList=";
-	for (int i=0 ; i<numOfOrders ; i++)
-		str+= orderList[i].toString()+"\n ";
-	
-	return str;*/
-	
 }// toString 
 
-/*public boolean checkId(int OrderId) {
-	if (OrderId==1111 ||OrderId==2222||OrderId==3333||OrderId==4444 ) 
-		return true ;
-		
-			
-
-	System.out.println("the Id is not valid ");
-	return false;
-}//checkId(int OrderId) */
 
 
 
 
-
-}//class Resturant 
+}//class Restaurant 

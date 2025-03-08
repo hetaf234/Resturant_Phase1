@@ -40,10 +40,6 @@ public class ChickenSandwich extends Sandwich {
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-	
-	
-	
 
-	
 	
 }//class chickenSandwich

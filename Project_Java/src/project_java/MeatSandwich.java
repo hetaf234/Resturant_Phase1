@@ -6,7 +6,7 @@ public  class MeatSandwich extends Sandwich {
 public MeatSandwich( int numOfSlices) {
 	super(22);
 	this.numOfSlices=numOfSlices;
-}//end of MeatSandwich constuctor 
+}//end of MeatSandwich constructor 
 
 public MeatSandwich(MeatSandwich meat) {
 	 super (meat.itemId);

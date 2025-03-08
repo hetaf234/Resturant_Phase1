@@ -39,27 +39,6 @@ public  boolean addOrderItem(OrderItem item) {
 	return true;
 }//addOrderItem(OrderItem item)
 
-/*public boolean removeOrderItem (int itemId) {
-	if (this.orderID != itemId) {
-		System.out.println("Sorry! Could not find item with ID \" + itemId + \" in the order.");
-	return false;// Item not found
-}
-	for (int i = 0; i < numOfOrderItem; i++) {
-        if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemId) {
-            // Shift elements to the left
-            for (int j = i; j < numOfOrderItem - 1; j++) {
-                OrderItemList[j] = OrderItemList[j + 1];
-            }
-            OrderItemList[numOfOrderItem - 1] = null; // Clear last slot
-            numOfOrderItem--; // Reduce count
-            System.out.println("✅ The item with ID " + itemId + " has been removed from the order.");
-            return true; // Item removed successfully
-        }
-    }
- 
-
-	 } //removeOrderItem (String itemName)
-	*/
 
  public boolean removeOrderItem(int orderID, int itemID) { 
 	    if (this.orderID != orderID) {
@@ -84,24 +63,6 @@ public  boolean addOrderItem(OrderItem item) {
 	    return false;
 	}
 
-	 
-	 /* if (this.orderID != orderID) {
-	 
-		 System.out.println("Order ID not found.");
-	 return false; } // Loop through the order items using a simple loop 
-	 
-	 for (int i = 0; i < OrderItemList.length; i++) {
-		 if (OrderItemList[i] != null && OrderItemList[i].getItemId() == itemID) {       OrderItemList[i] = null; 
-		 numOfOrderItem--;
-		 
-		 System.out.println("Item with ID " + itemID + " has been removed from Order ID: " + orderID); 
-		 return true; 
-		 } 
-		 }
-	 System.out.println("Item with ID " + itemID + " not found in the order."); 
-		 return false; 
-		 }  */
-		 
 	  
 public  boolean searchOrderItem( int itemId ) {
 	
@@ -137,12 +98,7 @@ public String toString() {
     str += "-------------------------------\n";
 
     return str;
-	/*String str=" orderID=" + orderID + "\n  numOfOrderItem= " + numOfOrderItem ;
-	for(int i =0 ; i <numOfOrderItem;i++) {
-		  if (OrderItemList[i] != null)
-	str+= "\n " +OrderItemList[i].toString();
-	}//end for loop 
-	return str;	*/
+	
 }//to string 
 
 public int getOrderID() {
@@ -248,29 +204,6 @@ public double getTotalPrice() {
 	}//for 
 	return total ;
 }//public double getTotalPrice()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*public OrderItem[] getOrderItemList() {
-	return OrderItemList;
-}
-
-public void setOrderItemList(OrderItem[] orderItemList) {
-	OrderItemList = orderItemList;
-}*/
-
 
 
 

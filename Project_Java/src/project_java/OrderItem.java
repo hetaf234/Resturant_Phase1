@@ -32,18 +32,4 @@ public void setItemName(int  itemId) {
 }//setItemName
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
 }//class OrderItem

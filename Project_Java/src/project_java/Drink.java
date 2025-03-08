@@ -60,11 +60,4 @@ public static int getDrinkItemId(char size) {
 }
 
 
-	
-	
- 	
-	
-	
-	
-	
 }//class Drink
